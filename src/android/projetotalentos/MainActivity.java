@@ -61,7 +61,7 @@ public class MainActivity extends Activity {
         			Toast.makeText(getApplicationContext(),"Concordo plenamente",Toast.LENGTH_LONG).show();
         		
         		//Toast.makeText(getApplicationContext(),"Your Selected Ratings  : " + String.valueOf(rating),Toast.LENGTH_LONG).show();
-           
+        		//Continuar amanha
             }
            });
         
