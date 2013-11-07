@@ -2,8 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clickable="true"
-    android:onClick="mostrarDescricao"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -18,10 +16,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="132dp"
-        android:clickable="true"
         android:isIndicator="false"
         android:numStars="5"
-        android:onClick="mostrarDescricao"
         android:stepSize="1" />
 
     <TextView
@@ -32,14 +28,33 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="76dp" />
 
+    <Chronometer
+        android:id="@+id/chronometer1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ratingBar1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="25dp"
+        android:text="Chronometer" />
+
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/ratingBar1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="58dp"
+        android:layout_alignBaseline="@+id/chronometer1"
+        android:layout_alignBottom="@+id/chronometer1"
+        android:layout_alignRight="@+id/ratingBar1"
+        android:layout_marginRight="10dp"
         android:onClick="mostrarDescricao"
         android:text="Button" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="24dp"
+        android:layout_toLeftOf="@+id/textView1"
+        android:text="textview" />
 
 </RelativeLayout>

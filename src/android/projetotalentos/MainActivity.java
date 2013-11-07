@@ -1,13 +1,19 @@
 package android.projetotalentos;
 
 import android.app.Activity;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Chronometer;
 import android.widget.RatingBar;
 import android.widget.RatingBar.OnRatingBarChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
+
+//import java.util.Arrays;
+
 
 public class MainActivity extends Activity {
 
@@ -15,6 +21,11 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        Chronometer cronometro = (Chronometer) findViewById(R.id.chronometer1);
+        cronometro.setBase(SystemClock.elapsedRealtime());
+        cronometro.start();
+
     }
 
 
@@ -22,10 +33,12 @@ public class MainActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
-        
         RatingBar nota = (RatingBar) findViewById(R.id.ratingBar1);
-        
-        
+       
+        //Define afirmação
+        Resources res = getResources();
+        String[] afirmacoes = res.getStringArray(R.array.Afirmacoes);
+         
         // Cria descrição das estrelas
         nota.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
         	public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
@@ -61,22 +74,28 @@ public class MainActivity extends Activity {
         			Toast.makeText(getApplicationContext(),"Concordo plenamente",Toast.LENGTH_LONG).show();
         		
         		//Toast.makeText(getApplicationContext(),"Your Selected Ratings  : " + String.valueOf(rating),Toast.LENGTH_LONG).show();
-        		//Continuar amanha
+        		       		
             }
            });
+        
+        TextView afirmacao = (TextView) findViewById(R.id.textView2);
+        afirmacao.setText(afirmacoes[1].toString());
         
         
         return true;
     }
     
     public void mostrarDescricao(View view) {
-    	RatingBar nota = (RatingBar) findViewById(R.id.ratingBar1);
-    	TextView texto = (TextView) findViewById(R.id.textView1);
+    	//Define afirmação
+        Resources res = getResources();
+        String[] afirmacoes = res.getStringArray(R.array.Afirmacoes);
     	
-    	String strNota = nota.getRating() + "";
-    	
-    
-    	texto.setText(strNota);
+        Chronometer cronometro = (Chronometer) findViewById(R.id.chronometer1);
+        cronometro.stop();
+        Toast.makeText(getApplicationContext(),cronometro.getText(),Toast.LENGTH_LONG).show();
+        
+        TextView afirmacao = (TextView) findViewById(R.id.textView2);
+        afirmacao.setText(afirmacoes[2].toString());
     	
     }
     

@@ -4,6 +4,12 @@
     <string name="app_name">ProjetoTalentos</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="strNota">&quot;&quot;</string>
+    <string-array name="Afirmacoes">
+        <item >Você gosta de viver o momento. Os imprevistos do dia-a-dia te motivam a resolver todos esses possíveis problemas.</item>
+        <item >Quando algum fato é exposto por alguém você o questiona para apresentar argumentos que comprovem a veracidade do assunto.</item>
+        <item >Você sempre fica ansioso para iniciar uma atividade.</item>
+        <item >A decisão final é sempre sua. Ninguém é capaz de decidir por você.</item>
+        <item >Conhecer pessoas é uma atividade que te proporciona muito prazer.</item>
+    </string-array>
 
 </resources>
