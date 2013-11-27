@@ -45,8 +45,8 @@
         android:layout_alignBottom="@+id/chronometer1"
         android:layout_alignRight="@+id/ratingBar1"
         android:layout_marginRight="10dp"
-        android:onClick="mostrarDescricao"
-        android:text="Button" />
+        android:onClick="pularAfirmacao"
+        android:text="Próxima" />
 
     <TextView
         android:id="@+id/textView2"
