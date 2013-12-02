@@ -111,31 +111,34 @@ public class MainActivity extends Activity {
          */
         nota.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
         	public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                String mensagem = "";
-        		
-        		switch((int) rating) {
+        		Toast toast = new Toast(getApplicationContext());
+    			switch((int) rating) {
         		case 1:
-        			mensagem = "Discordo plenamente";
+        			toast = Toast.makeText(getApplicationContext(),"Discordo plenamente",Toast.LENGTH_SHORT);
+        			toast.setGravity(Gravity.CENTER, 0, 0);
+        			toast.show();
         			break;
         		case 2:
-        			mensagem = "Discordo em partes";
+        			toast = Toast.makeText(getApplicationContext(),"Discordo em partes",Toast.LENGTH_SHORT);
+        			toast.setGravity(Gravity.CENTER, 0, 0);
+        			toast.show();
         			break;
         		case 3:
-        			mensagem = "Neutro";
+        			toast = Toast.makeText(getApplicationContext(),"Neutro",Toast.LENGTH_SHORT);
+        			toast.setGravity(Gravity.CENTER, 0, 0);
+        			toast.show();
         			break;
         		case 4:
-        			mensagem = "Concordo";
+        			toast = Toast.makeText(getApplicationContext(),"Concordo",Toast.LENGTH_SHORT);
+        			toast.setGravity(Gravity.CENTER, 0, 0);
+        			toast.show();
         			break;
         		case 5:
-        			mensagem = "Concordo plenamente";
+        			toast = Toast.makeText(getApplicationContext(),"Concordo plenamente",Toast.LENGTH_SHORT);
+        			toast.setGravity(Gravity.CENTER, 0, 0);
+        			toast.show();
         			break;
-        		//default:
-        			//mensagem = "Por favor, responda para prosseguir com o teste";
-        			}
-        		Toast toast = Toast.makeText(getApplicationContext(),mensagem,Toast.LENGTH_SHORT);
-    			toast.setGravity(Gravity.CENTER, 0, 0);
-    			toast.show();
-        
+        		}
             }
            });
               
